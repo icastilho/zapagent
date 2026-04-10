@@ -10,3 +10,7 @@ dist
 .netlify
 .vercel
 .idea
+# Ignore Mastra/observability local DB artifacts
+mastra.db
+src/mastra/public/mastra.duckdb
+src/mastra/public/mastra.duckdb.wal
