@@ -1,7 +1,7 @@
 import { registerApiRoute } from '@mastra/core/server';
 import { z } from 'zod';
 import { WhatsAppCloudAdapter } from '../domain/whatsapp-sales/channel-adapter';
-import { logError, logInfo } from '../domain/whatsapp-sales/logging';
+import { logError, logInfo, logWarn } from '../domain/whatsapp-sales/logging';
 import { WhatsAppSalesRuntime } from '../domain/whatsapp-sales/runtime';
 
 const replaySchema = z.object({
@@ -97,6 +97,25 @@ export function createWhatsAppApiRoutes(runtime: WhatsAppSalesRuntime) {
         },
       },
       handler: async c => {
+        const expected = process.env.INTERNAL_API_TOKEN;
+        if (!expected) {
+          logError(
+            'whatsapp.route.replay.misconfigured',
+            new Error('INTERNAL_API_TOKEN is not set'),
+            { path: c.req.path },
+          );
+          return c.json({ error: 'Internal endpoint not configured' }, 500);
+        }
+
+        const auth = c.req.header('authorization') ?? '';
+        const provided = auth.startsWith('Bearer ') ? auth.slice(7) : '';
+        if (provided !== expected) {
+          logWarn('whatsapp.route.replay.unauthorized', {
+            conversationId: c.req.param('conversationId'),
+          });
+          return c.text('Unauthorized', 401);
+        }
+
         try {
           const body = replaySchema.parse(await c.req.json());
           const conversationId = c.req.param('conversationId');
