@@ -7,7 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "mastra dev",
     "build": "mastra build",
-    "start": "mastra start"
+    "start": "mastra start",
+    "prepare": "node scripts/install-git-hooks.mjs",
+    "validate:branch": "node scripts/validate-branch-name.mjs",
+    "validate:commit-msg": "node scripts/validate-commit-msg.mjs",
+    "validate:pr": "node scripts/validate-pr-body.mjs"
   },
   "keywords": [],
   "author": "",

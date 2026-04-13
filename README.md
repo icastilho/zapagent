@@ -113,3 +113,4 @@ curl -X POST http://localhost:4111/api/internal/conversations/<conversationId>/r
 - `docs/IMPLEMENTATION_PLAN.md`: delivery status and next steps
 - `docs/PLAYBOOK_VENDAS_FACILITOY_V3.md`: sales playbook
 - `docs/v3/` and `docs/v4/`: prompt, router, and knowledge source material
+- `CONTRIBUTING.md`: required branch, commit, and pull request conventions
