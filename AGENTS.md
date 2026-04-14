@@ -48,12 +48,22 @@ Top-level files define how your Mastra project is configured, built, and connect
 - Register new agents, tools, workflows, and scorers in `src/mastra/index.ts`
 - Use schemas for tool inputs and outputs
 - Run `npm run build` to verify changes compile
+- Follow `CONTRIBUTING.md` for branch names, commit messages, and PR structure
 
 ### Never do
 
 - Never commit `.env` files or secrets
 - Never modify `node_modules` or Mastra's database files directly
 - Never hardcode API keys (always use environment variables)
+
+## Contribution Protocol
+
+Agents are not exempt from repository contribution rules.
+
+- Commit messages must follow `type(scope): short imperative summary`
+- PR titles must follow the same pattern as commit messages
+- PR descriptions must complete every section in `.github/pull_request_template.md`
+- A contribution is incomplete if local hooks or CI fail
 
 ## Resources
 
