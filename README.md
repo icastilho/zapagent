@@ -110,6 +110,7 @@ curl -X POST http://localhost:4111/api/internal/conversations/<conversationId>/r
 ## Documentation
 
 - `docs/CONTEXT.md`: current implementation snapshot
+- `docs/ANALISE_AGENTES_CODEX.md`: recommendation on which additional agents and workflows are worth adding
 - `docs/IMPLEMENTATION_PLAN.md`: delivery status and next steps
 - `docs/PLAYBOOK_VENDAS_FACILITOY_V3.md`: sales playbook
 - `docs/v3/` and `docs/v4/`: prompt, router, and knowledge source material
