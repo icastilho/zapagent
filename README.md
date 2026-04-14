@@ -20,6 +20,10 @@ To learn more about Mastra, visit our [documentation](https://mastra.ai/docs/). 
 
 If you're new to AI agents, check out our [course](https://mastra.ai/course) and [YouTube videos](https://youtube.com/@mastra-ai). You can also join our [Discord](https://discord.gg/BTYqqHKUrf) community to get help and share your projects.
 
+## Project Notes
+
+- `docs/ANALISE_AGENTES_CODEX.md`: analise consolidada sobre agentes Codex de engenharia e agentes do produto que fazem sentido para este repositorio
+
 ## Deploy on Mastra Cloud
 
 [Mastra Cloud](https://cloud.mastra.ai/) gives you a serverless agent environment with atomic deployments. Access your agents from anywhere and monitor performance. Make sure they don't go off the rails with evals and tracing.
